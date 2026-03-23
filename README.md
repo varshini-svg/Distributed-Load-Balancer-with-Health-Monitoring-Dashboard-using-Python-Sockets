@@ -1,7 +1,3 @@
-Here is a **complete professional `README.md`** for your project (no emojis, clean and ready for GitHub submission):
-
----
-
 # Distributed Load Balancer with Health Monitoring and Dashboard (Python)
 
 ## Overview
