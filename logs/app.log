@@ -1,0 +1,314 @@
+[2026-03-22 18:29:10] [INFO] [Main] Starting Load Balancer...
+[2026-03-22 18:29:10] [INFO] [LoadBalancer] Load Balancer running on 127.0.0.1:8080
+[2026-03-22 18:29:10] [INFO] [LoadBalancer] Algorithm: round_robin
+[2026-03-22 18:29:11] [INFO] [Main] Starting Dashboard at http://127.0.0.1:5000
+[2026-03-22 18:29:33] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 49779)
+[2026-03-22 18:29:33] [INFO] [RequestHandler] GET /
+[2026-03-22 18:29:33] [INFO] [RequestHandler] Trying server {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-22 18:29:33] [INFO] [RequestHandler] Success from {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-22 18:29:33] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 49779)
+[2026-03-22 18:29:33] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 54864)
+[2026-03-22 18:29:33] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 60261)
+[2026-03-22 18:29:34] [INFO] [RequestHandler] GET /favicon.ico
+[2026-03-22 18:29:34] [INFO] [RequestHandler] Trying server {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-22 18:29:34] [INFO] [RequestHandler] Success from {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-22 18:29:34] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 54864)
+[2026-03-22 18:29:45] [INFO] [RequestHandler] GET /
+[2026-03-22 18:29:45] [INFO] [RequestHandler] Trying server {'id': 'SLOW', 'host': '127.0.0.1', 'port': 9003, 'weight': 1, 'type': 'slow', 'min_delay': 2, 'max_delay': 5}
+[2026-03-22 18:29:45] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 62520)
+[2026-03-22 18:29:49] [INFO] [RequestHandler] Success from {'id': 'SLOW', 'host': '127.0.0.1', 'port': 9003, 'weight': 1, 'type': 'slow', 'min_delay': 2, 'max_delay': 5}
+[2026-03-22 18:29:49] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 60261)
+[2026-03-22 18:29:49] [INFO] [RequestHandler] GET /favicon.ico
+[2026-03-22 18:29:49] [INFO] [RequestHandler] Trying server {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 18:29:50] [WARNING] [RequestHandler] Failed attempt on {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 18:29:50] [WARNING] [RequestHandler] Retry attempt 1 failed
+[2026-03-22 18:29:50] [INFO] [RequestHandler] Trying server {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 18:29:50] [WARNING] [RequestHandler] Failed attempt on {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 18:29:50] [WARNING] [RequestHandler] Retry attempt 2 failed
+[2026-03-22 18:29:50] [ERROR] [RequestHandler] All retries failed
+[2026-03-22 18:29:50] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 62520)
+[2026-03-22 18:29:52] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 57641)
+[2026-03-22 18:29:52] [INFO] [RequestHandler] GET /
+[2026-03-22 18:29:52] [INFO] [RequestHandler] Trying server {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-22 18:29:52] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 60594)
+[2026-03-22 18:29:52] [INFO] [RequestHandler] Success from {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-22 18:29:52] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 57641)
+[2026-03-22 18:29:52] [INFO] [RequestHandler] GET /favicon.ico
+[2026-03-22 18:29:52] [INFO] [RequestHandler] Trying server {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-22 18:29:52] [INFO] [RequestHandler] Success from {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-22 18:29:52] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 60594)
+[2026-03-22 18:30:46] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 56262)
+[2026-03-22 18:30:46] [INFO] [RequestHandler] GET /
+[2026-03-22 18:30:46] [INFO] [RequestHandler] Trying server {'id': 'SLOW', 'host': '127.0.0.1', 'port': 9003, 'weight': 1, 'type': 'slow', 'min_delay': 2, 'max_delay': 5}
+[2026-03-22 18:30:46] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 59922)
+[2026-03-22 18:30:49] [INFO] [RequestHandler] Success from {'id': 'SLOW', 'host': '127.0.0.1', 'port': 9003, 'weight': 1, 'type': 'slow', 'min_delay': 2, 'max_delay': 5}
+[2026-03-22 18:30:49] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 56262)
+[2026-03-22 18:30:49] [INFO] [RequestHandler] GET /favicon.ico
+[2026-03-22 18:30:49] [INFO] [RequestHandler] Trying server {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 18:30:51] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 53284)
+[2026-03-22 18:30:51] [INFO] [RequestHandler] GET /
+[2026-03-22 18:30:51] [INFO] [RequestHandler] Trying server {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-22 18:30:51] [INFO] [RequestHandler] Success from {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-22 18:30:51] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 53284)
+[2026-03-22 18:30:51] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 60988)
+[2026-03-22 18:30:51] [INFO] [RequestHandler] GET /favicon.ico
+[2026-03-22 18:30:51] [INFO] [RequestHandler] Trying server {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-22 18:30:51] [INFO] [RequestHandler] Success from {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-22 18:30:51] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 60988)
+[2026-03-22 18:30:52] [INFO] [RequestHandler] Success from {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 18:30:52] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 59922)
+[2026-03-22 18:30:53] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 61880)
+[2026-03-22 18:30:53] [INFO] [RequestHandler] GET /
+[2026-03-22 18:30:53] [INFO] [RequestHandler] Trying server {'id': 'SLOW', 'host': '127.0.0.1', 'port': 9003, 'weight': 1, 'type': 'slow', 'min_delay': 2, 'max_delay': 5}
+[2026-03-22 18:30:53] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 49858)
+[2026-03-22 18:30:56] [INFO] [RequestHandler] Success from {'id': 'SLOW', 'host': '127.0.0.1', 'port': 9003, 'weight': 1, 'type': 'slow', 'min_delay': 2, 'max_delay': 5}
+[2026-03-22 18:30:56] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 61880)
+[2026-03-22 18:30:56] [INFO] [RequestHandler] GET /favicon.ico
+[2026-03-22 18:30:56] [INFO] [RequestHandler] Trying server {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 18:30:58] [INFO] [RequestHandler] Success from {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 18:30:58] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 49858)
+[2026-03-22 18:30:59] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 58829)
+[2026-03-22 18:30:59] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 60000)
+[2026-03-22 18:30:59] [INFO] [RequestHandler] GET /
+[2026-03-22 18:30:59] [INFO] [RequestHandler] Trying server {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-22 18:30:59] [INFO] [RequestHandler] Success from {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-22 18:30:59] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 58829)
+[2026-03-22 18:30:59] [INFO] [RequestHandler] GET /favicon.ico
+[2026-03-22 18:30:59] [INFO] [RequestHandler] Trying server {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-22 18:30:59] [INFO] [RequestHandler] Success from {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-22 18:30:59] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 60000)
+[2026-03-22 18:31:19] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 61691)
+[2026-03-22 18:32:19] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 61691)
+[2026-03-22 19:46:10] [INFO] [Main] Starting Load Balancer...
+[2026-03-22 19:46:10] [INFO] [LoadBalancer] Load Balancer running on 127.0.0.1:8080
+[2026-03-22 19:46:10] [INFO] [LoadBalancer] Algorithm: round_robin
+[2026-03-22 19:46:11] [INFO] [Main] Starting Dashboard at http://127.0.0.1:5000
+[2026-03-22 19:46:12] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 59031)
+[2026-03-22 19:46:12] [INFO] [RequestHandler] GET /
+[2026-03-22 19:46:12] [INFO] [RequestHandler] Trying server {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-22 19:46:12] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 52500)
+[2026-03-22 19:46:12] [INFO] [RequestHandler] Success from {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-22 19:46:12] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 59031)
+[2026-03-22 19:46:12] [INFO] [RequestHandler] GET /favicon.ico
+[2026-03-22 19:46:12] [INFO] [RequestHandler] Trying server {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-22 19:46:12] [INFO] [RequestHandler] Success from {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-22 19:46:12] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 52500)
+[2026-03-22 19:46:14] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 54638)
+[2026-03-22 19:46:14] [INFO] [RequestHandler] GET /
+[2026-03-22 19:46:14] [INFO] [RequestHandler] Trying server {'id': 'SLOW', 'host': '127.0.0.1', 'port': 9003, 'weight': 1, 'type': 'slow', 'min_delay': 2, 'max_delay': 5}
+[2026-03-22 19:46:14] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 62061)
+[2026-03-22 19:46:19] [INFO] [RequestHandler] Success from {'id': 'SLOW', 'host': '127.0.0.1', 'port': 9003, 'weight': 1, 'type': 'slow', 'min_delay': 2, 'max_delay': 5}
+[2026-03-22 19:46:19] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 54638)
+[2026-03-22 19:46:19] [INFO] [RequestHandler] GET /favicon.ico
+[2026-03-22 19:46:19] [INFO] [RequestHandler] Trying server {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 19:46:21] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 58346)
+[2026-03-22 19:46:21] [INFO] [RequestHandler] GET /
+[2026-03-22 19:46:21] [INFO] [RequestHandler] Trying server {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-22 19:46:21] [INFO] [RequestHandler] Success from {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-22 19:46:21] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 58346)
+[2026-03-22 19:46:21] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 51999)
+[2026-03-22 19:46:21] [INFO] [RequestHandler] GET /favicon.ico
+[2026-03-22 19:46:21] [INFO] [RequestHandler] Trying server {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-22 19:46:21] [INFO] [RequestHandler] Success from {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-22 19:46:21] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 51999)
+[2026-03-22 19:46:22] [INFO] [RequestHandler] Success from {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 19:46:22] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 62061)
+[2026-03-22 19:46:22] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 64940)
+[2026-03-22 19:46:22] [INFO] [RequestHandler] GET /
+[2026-03-22 19:46:22] [INFO] [RequestHandler] Trying server {'id': 'SLOW', 'host': '127.0.0.1', 'port': 9003, 'weight': 1, 'type': 'slow', 'min_delay': 2, 'max_delay': 5}
+[2026-03-22 19:46:22] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 51790)
+[2026-03-22 19:46:26] [INFO] [RequestHandler] Success from {'id': 'SLOW', 'host': '127.0.0.1', 'port': 9003, 'weight': 1, 'type': 'slow', 'min_delay': 2, 'max_delay': 5}
+[2026-03-22 19:46:26] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 64940)
+[2026-03-22 19:46:27] [INFO] [RequestHandler] GET /favicon.ico
+[2026-03-22 19:46:27] [INFO] [RequestHandler] Trying server {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 19:46:27] [WARNING] [RequestHandler] Failed attempt on {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 19:46:27] [WARNING] [RequestHandler] Retry attempt 1 failed
+[2026-03-22 19:46:27] [INFO] [RequestHandler] Trying server {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 19:46:27] [WARNING] [RequestHandler] Failed attempt on {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 19:46:27] [WARNING] [RequestHandler] Retry attempt 2 failed
+[2026-03-22 19:46:27] [ERROR] [RequestHandler] All retries failed
+[2026-03-22 19:46:27] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 51790)
+[2026-03-22 19:46:39] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 50078)
+[2026-03-22 19:46:39] [INFO] [RequestHandler] GET /
+[2026-03-22 19:46:39] [INFO] [RequestHandler] Trying server {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-22 19:46:39] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 58511)
+[2026-03-22 19:46:39] [INFO] [RequestHandler] Success from {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-22 19:46:39] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 50078)
+[2026-03-22 19:46:39] [INFO] [RequestHandler] GET /favicon.ico
+[2026-03-22 19:46:39] [INFO] [RequestHandler] Trying server {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-22 19:46:39] [INFO] [RequestHandler] Success from {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-22 19:46:39] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 58511)
+[2026-03-22 19:46:40] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 51955)
+[2026-03-22 19:46:40] [INFO] [RequestHandler] GET /
+[2026-03-22 19:46:40] [INFO] [RequestHandler] Trying server {'id': 'SLOW', 'host': '127.0.0.1', 'port': 9003, 'weight': 1, 'type': 'slow', 'min_delay': 2, 'max_delay': 5}
+[2026-03-22 19:46:40] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 60413)
+[2026-03-22 19:46:44] [INFO] [RequestHandler] Success from {'id': 'SLOW', 'host': '127.0.0.1', 'port': 9003, 'weight': 1, 'type': 'slow', 'min_delay': 2, 'max_delay': 5}
+[2026-03-22 19:46:44] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 51955)
+[2026-03-22 19:46:44] [INFO] [RequestHandler] GET /favicon.ico
+[2026-03-22 19:46:44] [INFO] [RequestHandler] Trying server {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 19:46:45] [INFO] [RequestHandler] Success from {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 19:46:45] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 60413)
+[2026-03-22 19:48:00] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 53668)
+[2026-03-22 19:48:00] [INFO] [RequestHandler] GET /
+[2026-03-22 19:48:00] [INFO] [RequestHandler] Trying server {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-22 19:48:00] [INFO] [RequestHandler] Success from {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-22 19:48:00] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 53668)
+[2026-03-22 19:48:00] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 49238)
+[2026-03-22 19:48:00] [INFO] [RequestHandler] GET /favicon.ico
+[2026-03-22 19:48:00] [INFO] [RequestHandler] Trying server {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-22 19:48:00] [INFO] [RequestHandler] Success from {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-22 19:48:00] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 49238)
+[2026-03-22 19:48:01] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 53871)
+[2026-03-22 19:48:01] [INFO] [RequestHandler] GET /
+[2026-03-22 19:48:01] [INFO] [RequestHandler] Trying server {'id': 'SLOW', 'host': '127.0.0.1', 'port': 9003, 'weight': 1, 'type': 'slow', 'min_delay': 2, 'max_delay': 5}
+[2026-03-22 19:48:01] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 53372)
+[2026-03-22 19:48:04] [INFO] [RequestHandler] Success from {'id': 'SLOW', 'host': '127.0.0.1', 'port': 9003, 'weight': 1, 'type': 'slow', 'min_delay': 2, 'max_delay': 5}
+[2026-03-22 19:48:04] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 53871)
+[2026-03-22 19:48:04] [INFO] [RequestHandler] GET /favicon.ico
+[2026-03-22 19:48:04] [INFO] [RequestHandler] Trying server {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 19:48:07] [INFO] [RequestHandler] Success from {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 19:48:07] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 53372)
+[2026-03-22 19:50:47] [INFO] [Main] Starting Load Balancer...
+[2026-03-22 19:50:47] [INFO] [LoadBalancer] Load Balancer running on 127.0.0.1:8080
+[2026-03-22 19:50:47] [INFO] [LoadBalancer] Algorithm: round_robin
+[2026-03-22 19:50:48] [INFO] [Main] Starting Dashboard at http://127.0.0.1:5000
+[2026-03-22 19:50:53] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 55166)
+[2026-03-22 19:50:53] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 55166): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:50:53] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 55166)
+[2026-03-22 19:50:53] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 61535)
+[2026-03-22 19:50:53] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 61535): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:50:53] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 61535)
+[2026-03-22 19:50:53] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 56701)
+[2026-03-22 19:50:53] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 59058)
+[2026-03-22 19:50:53] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 56701): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:50:53] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 59058): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:50:53] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 56701)
+[2026-03-22 19:50:53] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 59058)
+[2026-03-22 19:50:54] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 52698)
+[2026-03-22 19:50:54] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 52698): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:50:54] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 52698)
+[2026-03-22 19:50:54] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 52195)
+[2026-03-22 19:50:54] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 52195): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:50:54] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 52195)
+[2026-03-22 19:50:54] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 59562)
+[2026-03-22 19:50:54] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 59562): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:50:54] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 59562)
+[2026-03-22 19:51:02] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 64440)
+[2026-03-22 19:51:02] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 64440): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:51:02] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 64440)
+[2026-03-22 19:51:02] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 63587)
+[2026-03-22 19:51:02] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 63587): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:51:02] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 63587)
+[2026-03-22 19:51:02] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 64038)
+[2026-03-22 19:51:02] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 64038): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:51:02] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 60764)
+[2026-03-22 19:51:02] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 64038)
+[2026-03-22 19:51:02] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 60764): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:51:02] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 60764)
+[2026-03-22 19:51:04] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 57136)
+[2026-03-22 19:51:04] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 57136): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:51:04] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 57136)
+[2026-03-22 19:51:04] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 64272)
+[2026-03-22 19:51:04] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 61347)
+[2026-03-22 19:51:04] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 64272): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:51:04] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 61347): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:51:04] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 64272)
+[2026-03-22 19:51:04] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 61347)
+[2026-03-22 19:51:05] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 59330)
+[2026-03-22 19:51:05] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 59330): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:51:05] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 59330)
+[2026-03-22 19:51:05] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 50061)
+[2026-03-22 19:51:05] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 50061): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:51:05] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 50061)
+[2026-03-22 19:51:05] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 65246)
+[2026-03-22 19:51:05] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 65246): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:51:05] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 56013)
+[2026-03-22 19:51:05] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 56013): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:51:05] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 65246)
+[2026-03-22 19:51:05] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 56013)
+[2026-03-22 19:51:05] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 49795)
+[2026-03-22 19:51:05] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 49795): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:51:05] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 49795)
+[2026-03-22 19:51:05] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 54757)
+[2026-03-22 19:51:05] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 54757): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:51:05] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 54757)
+[2026-03-22 19:51:05] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 63587)
+[2026-03-22 19:51:05] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 63587): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:51:05] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 63486)
+[2026-03-22 19:51:05] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 63587)
+[2026-03-22 19:51:05] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 63486): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:51:05] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 63486)
+[2026-03-22 19:51:06] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 60168)
+[2026-03-22 19:51:06] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 60168): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:51:06] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 60168)
+[2026-03-22 19:51:06] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 60527)
+[2026-03-22 19:51:06] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 60527): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:51:06] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 60527)
+[2026-03-22 19:51:06] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 64972)
+[2026-03-22 19:51:06] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 64972): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:51:06] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 63177)
+[2026-03-22 19:51:06] [ERROR] [LoadBalancer] Error handling client ('127.0.0.1', 63177): cannot access local variable 'server' where it is not associated with a value
+[2026-03-22 19:51:06] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 64972)
+[2026-03-22 19:51:06] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 63177)
+[2026-03-22 19:51:27] [INFO] [Main] Starting Load Balancer...
+[2026-03-22 19:51:27] [INFO] [LoadBalancer] Load Balancer running on 127.0.0.1:8080
+[2026-03-22 19:51:27] [INFO] [LoadBalancer] Algorithm: round_robin
+[2026-03-22 19:51:28] [INFO] [Main] Starting Dashboard at http://127.0.0.1:5000
+[2026-03-22 19:51:30] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 64423)
+[2026-03-22 19:51:30] [INFO] [RequestHandler] GET /
+[2026-03-22 19:51:30] [INFO] [RequestHandler] Trying server {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-22 19:51:30] [INFO] [RequestHandler] Success from {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-22 19:51:30] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 64423)
+[2026-03-22 19:51:30] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 60454)
+[2026-03-22 19:51:30] [INFO] [RequestHandler] GET /favicon.ico
+[2026-03-22 19:51:30] [INFO] [RequestHandler] Trying server {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-22 19:51:30] [INFO] [RequestHandler] Success from {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-22 19:51:30] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 60454)
+[2026-03-22 19:51:32] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 62896)
+[2026-03-22 19:51:32] [INFO] [RequestHandler] GET /
+[2026-03-22 19:51:32] [INFO] [RequestHandler] Trying server {'id': 'SLOW', 'host': '127.0.0.1', 'port': 9003, 'weight': 1, 'type': 'slow', 'min_delay': 2, 'max_delay': 5}
+[2026-03-22 19:51:32] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 64580)
+[2026-03-22 19:51:36] [INFO] [RequestHandler] Success from {'id': 'SLOW', 'host': '127.0.0.1', 'port': 9003, 'weight': 1, 'type': 'slow', 'min_delay': 2, 'max_delay': 5}
+[2026-03-22 19:51:36] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 62896)
+[2026-03-22 19:51:36] [INFO] [RequestHandler] GET /favicon.ico
+[2026-03-22 19:51:36] [INFO] [RequestHandler] Trying server {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 19:51:36] [WARNING] [RequestHandler] Failed attempt on {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 19:51:36] [WARNING] [RequestHandler] Retry attempt 1 failed
+[2026-03-22 19:51:36] [INFO] [RequestHandler] Trying server {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 19:51:39] [INFO] [RequestHandler] Success from {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 19:51:39] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 64580)
+[2026-03-22 19:51:41] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 54872)
+[2026-03-22 19:51:41] [INFO] [RequestHandler] GET /
+[2026-03-22 19:51:41] [INFO] [RequestHandler] Trying server {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-22 19:51:41] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 58609)
+[2026-03-22 19:51:41] [INFO] [RequestHandler] Success from {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-22 19:51:41] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 54872)
+[2026-03-22 19:51:41] [INFO] [RequestHandler] GET /favicon.ico
+[2026-03-22 19:51:41] [INFO] [RequestHandler] Trying server {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-22 19:51:41] [INFO] [RequestHandler] Success from {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-22 19:51:41] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 58609)
+[2026-03-22 19:51:42] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 62755)
+[2026-03-22 19:51:42] [INFO] [RequestHandler] GET /
+[2026-03-22 19:51:42] [INFO] [RequestHandler] Trying server {'id': 'SLOW', 'host': '127.0.0.1', 'port': 9003, 'weight': 1, 'type': 'slow', 'min_delay': 2, 'max_delay': 5}
+[2026-03-22 19:51:42] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 53793)
+[2026-03-22 19:51:46] [INFO] [RequestHandler] Success from {'id': 'SLOW', 'host': '127.0.0.1', 'port': 9003, 'weight': 1, 'type': 'slow', 'min_delay': 2, 'max_delay': 5}
+[2026-03-22 19:51:46] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 62755)
+[2026-03-22 19:51:46] [INFO] [RequestHandler] GET /favicon.ico
+[2026-03-22 19:51:46] [INFO] [RequestHandler] Trying server {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 19:51:48] [INFO] [RequestHandler] Success from {'id': 'UNSTABLE', 'host': '127.0.0.1', 'port': 9004, 'weight': 1, 'type': 'unstable', 'fail_rate': 0.3, 'crash_rate': 0.1}
+[2026-03-22 19:51:48] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 53793)
+[2026-03-25 20:23:19] [INFO] [Main] Starting Load Balancer...
+[2026-03-25 20:23:19] [INFO] [LoadBalancer] Load Balancer running on 127.0.0.1:8080
+[2026-03-25 20:23:19] [INFO] [LoadBalancer] Algorithm: round_robin
+[2026-03-25 20:23:20] [INFO] [Main] Starting Dashboard at http://127.0.0.1:5000
+[2026-03-25 20:23:43] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 58782)
+[2026-03-25 20:23:44] [INFO] [RequestHandler] GET /
+[2026-03-25 20:23:44] [INFO] [RequestHandler] Trying server {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-25 20:23:44] [INFO] [RequestHandler] Success from {'id': 'S1', 'host': '127.0.0.1', 'port': 9001, 'weight': 1, 'type': 'normal'}
+[2026-03-25 20:23:44] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 58782)
+[2026-03-25 20:23:44] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 51983)
+[2026-03-25 20:23:44] [INFO] [LoadBalancer] Client connected: ('127.0.0.1', 64318)
+[2026-03-25 20:23:44] [INFO] [RequestHandler] GET /favicon.ico
+[2026-03-25 20:23:44] [INFO] [RequestHandler] Trying server {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-25 20:23:44] [INFO] [RequestHandler] Success from {'id': 'S2', 'host': '127.0.0.1', 'port': 9002, 'weight': 2, 'type': 'normal'}
+[2026-03-25 20:23:44] [INFO] [LoadBalancer] Client disconnected: ('127.0.0.1', 51983)

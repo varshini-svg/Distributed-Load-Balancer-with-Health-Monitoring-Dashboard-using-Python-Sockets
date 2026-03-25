@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Load Balancer Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        🚀 Load Balancer Dashboard
+    </div>
+
+    <div class="container">
+
+        <!-- Stats Section -->
+        <div class="card">
+            <h2>📊 System Statistics</h2>
+            <div class="stats">
+                <div class="stat-box">
+                    <h2 id="totalRequests">0</h2>
+                    <p>Total Requests</p>
+                </div>
+                <div class="stat-box">
+                    <h2 id="activeConnections">0</h2>
+                    <p>Active Connections</p>
+                </div>
+                <div class="stat-box">
+                    <h2 id="serversUp">0</h2>
+                    <p>Servers UP</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Server Status -->
+        <div class="card">
+            <h2>🖥️ Server Status</h2>
+            <div id="serverList" class="server-list">
+                <!-- Dynamic content -->
+            </div>
+        </div>
+
+        <!-- Table Section -->
+        <div class="card">
+            <h2>📋 Server Details</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Host</th>
+                        <th>Port</th>
+                        <th>Status</th>
+                        <th>Connections</th>
+                    </tr>
+                </thead>
+                <tbody id="serverTable">
+                    <!-- Dynamic rows -->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2026 Load Balancer Project
+    </div>
+
+    <!-- -------------------------------
+         JavaScript for Dynamic Updates
+    -------------------------------- -->
+    <script>
+        async function fetchData() {
+            try {
+                const response = await fetch('/stats');
+                const data = await response.json();
+
+                // Update stats
+                document.getElementById('totalRequests').innerText = data.total_requests;
+                document.getElementById('activeConnections').innerText = data.active_connections;
+                document.getElementById('serversUp').innerText = data.servers_up;
+
+                // Update server cards
+                const serverList = document.getElementById('serverList');
+                serverList.innerHTML = "";
+
+                data.servers.forEach(server => {
+                    const div = document.createElement('div');
+                    div.className = "server " + (server.status === "UP" ? "up" : "down");
+                    div.innerText = `${server.id} (${server.port}) - ${server.status}`;
+                    serverList.appendChild(div);
+                });
+
+                // Update table
+                const table = document.getElementById('serverTable');
+                table.innerHTML = "";
+
+                data.servers.forEach(server => {
+                    const row = `
+                        <tr>
+                            <td>${server.id}</td>
+                            <td>${server.host}</td>
+                            <td>${server.port}</td>
+                            <td>${server.status}</td>
+                            <td>${server.connections}</td>
+                        </tr>
+                    `;
+                    table.innerHTML += row;
+                });
+
+            } catch (error) {
+                console.error("Error fetching stats:", error);
+            }
+        }
+
+        // Auto refresh every 2 seconds
+        setInterval(fetchData, 2000);
+
+        // Initial load
+        fetchData();
+    </script>
+
+</body>
+</html>
